@@ -2,6 +2,7 @@
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import ResumeSection from "./resumeSection"; 
+import SubscriptionCard from "./subscriptionCard";
 
 export default async function DashboardPage() {
   const { userId } = await auth();
@@ -106,19 +107,7 @@ export default async function DashboardPage() {
           {/* 右侧：订阅状态 + 简单 stats 占位 */}
           <div className="flex flex-col gap-6">
             {/* Subscription 区 */}
-            <div className="rounded-xl border border-gray-800 bg-gradient-to-b from-gray-900/70 to-black p-5">
-              <h2 className="text-lg font-semibold mb-2">Subscription</h2>
-              <p className="text-sm text-gray-400 mb-3">
-                Current plan: <span className="font-medium text-white">Free</span>
-              </p>
-              <p className="text-xs text-gray-500 mb-4">
-                Upgrade to unlock advanced analytics and personalized job
-                recommendations.
-              </p>
-              <button className="w-full px-4 py-2 rounded-md bg-blue-600 text-sm font-medium hover:bg-blue-700">
-                Upgrade to Pro
-              </button>
-            </div>
+            <SubscriptionCard />
 
             {/* 简单统计占位 */}
             <div className="rounded-xl border border-gray-800 bg-[#050505] p-5">
