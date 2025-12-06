@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 
-/**
- * Simple interactive subscription card.
- * In a real product this would trigger Stripe checkout or a billing portal.
- * Here we simulate an upgrade to Pro on the client side only.
- */
-export default function SubscriptionCard() {
+type SubscriptionCardProps = {
+  onUpgrade?: () => void;
+};
+
+export default function SubscriptionCard({ onUpgrade }: SubscriptionCardProps) {
   const [plan, setPlan] = useState<"Free" | "Pro">("Free");
   const [upgraded, setUpgraded] = useState(false);
 
@@ -15,6 +14,7 @@ export default function SubscriptionCard() {
     if (upgraded) return;
     setPlan("Pro");
     setUpgraded(true);
+    onUpgrade?.();      // ✅ 通知 Dashboard：已经升级
   };
 
   return (
