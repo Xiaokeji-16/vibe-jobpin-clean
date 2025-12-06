@@ -15,8 +15,8 @@ export default async function DashboardPage() {
   const name = user?.firstName || user?.emailAddresses[0]?.emailAddress || "there";
 
   // 先用假数据：假设 Profile 完成度 40%，当前在 Step 1
-  const profileCompletion = 40;
-  const currentStep = 1;
+  const Profile_Completion_Demo = 40;
+  const Current_onboarding_Step_Demo = 1;
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -32,12 +32,12 @@ export default async function DashboardPage() {
           <div className="space-y-2">
             <div className="flex justify-between text-sm text-gray-400">
               <span>Profile completion</span>
-              <span>{profileCompletion}%</span>
+              <span>{Profile_Completion_Demo}%</span>
             </div>
             <div className="h-2 w-full rounded-full bg-gray-800 overflow-hidden">
               <div
                 className="h-full rounded-full bg-blue-500 transition-all"
-                style={{ width: `${profileCompletion}%` }}
+                style={{ width: `${Profile_Completion_Demo}%` }}
               />
             </div>
           </div>
@@ -56,8 +56,8 @@ export default async function DashboardPage() {
                   "Review insights & subscribe",
                 ].map((label, index) => {
                   const step = index + 1;
-                  const isActive = step === currentStep;
-                  const isDone = step < currentStep;
+                  const isActive = step === Current_onboarding_Step_Demo;
+                  const isDone = step < Current_onboarding_Step_Demo;
                   return (
                     <div
                       key={label}
