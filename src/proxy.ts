@@ -1,4 +1,3 @@
-// proxy.ts（在项目根目录）
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
 export default clerkMiddleware();

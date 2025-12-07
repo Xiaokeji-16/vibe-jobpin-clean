@@ -1,4 +1,3 @@
-// src/app/dashboard/ResumeSection.tsx
 "use client";
 
 import { useState } from "react";
@@ -8,7 +7,7 @@ type ParsedResume = {
   name?: string;
   email?: string;
   phone?: string;
-  skills?: string;
+  skills?: string; 
 };
 
 type Props = {

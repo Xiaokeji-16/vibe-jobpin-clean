@@ -1,4 +1,3 @@
-// src/app/dashboard/page.tsx
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import DashboardClient from "./dashboardClient";
